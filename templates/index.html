@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chelsea, MA - Who Are My Elected Officials?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Chelsea, MA</h1>
+    <h2>Who Are My Elected Officials?</h2>
+    <form method="post" class="address-form">
+        <label for="address">Enter your address:</label><br>
+        <input type="text" id="address" name="address" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if entered_address %}
+        <div style="margin-bottom: 10px; font-size: 1.1em;">
+            <b>Address entered:</b> {{ entered_address }}
+        </div>
+    {% endif %}
+    {% if info %}
+        <div class="blue-box">
+            <div class="info-grid">
+                <div class="info-label">Polling Location: {{ info['Polling Location'] }}</div>
+                <div class="info-label">District: {{ info['District'] }}</div>
+                <div class="info-label">Ward: {{ info['Ward'] }}</div>
+                <div class="info-label">Precinct: {{ info['Precinct'] }}</div>
+                
+            </div>
+        </div>
+        {% if district_data %}
+        <div class="officials-section">
+            <div class="rep-section-header">District City Councilor</div>
+            <div class="representatives-grid">
+                <div class="rep-block rep-block-flex">
+                    <div class="rep-block-info">
+                        <span class="label">{{ district_data['city_councilor']['name'] }}</span><br>
+                        District {{ info['District'] }} City Councilor<br>
+                        {{ district_data['city_councilor']['phone'] }}<br>
+                        <a href="mailto:{{ district_data['city_councilor']['email'] }}">{{ district_data['city_councilor']['email'] }}</a><br>
+                        {{ district_data['city_councilor']['address'] }}<br>
+                        {% if district_data['city_councilor'].get('social_media') %}
+                            {% for platform, link in district_data['city_councilor']['social_media'].items() %}
+                                <a href="{{ link }}" target="_blank">{{ platform|capitalize }}</a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% set img_name = district_data['city_councilor']['name'].split()[0]|lower %}
+                    {% if img_name in available_images %}
+                        <img class="rep-block-img" src="{{ url_for('static', filename='images/' + img_name + '.jpg') }}" alt="{{ district_data['city_councilor']['name'] }}">
+                    {% endif %}
+                </div>
+            </div>
+            {% if at_large_data and at_large_data.get('city_councilors') %}
+                <div class="rep-section-header">At-Large City Councilors</div>
+                <div class="representatives-grid">
+                    {% for councilor in at_large_data['city_councilors'] %}
+                        <div class="rep-block rep-block-flex">
+                            <div class="rep-block-info">
+                                <span class="label">{{ councilor['name'] }}</span><br>
+                                At-Large City Councilor<br>
+                                {{ councilor['phone'] }}<br>
+                                <a href="mailto:{{ councilor['email'] }}">{{ councilor['email'] }}</a><br>
+                                {{ councilor['address'] }}<br>
+                                {% if councilor.get('social_media') %}
+                                    {% for platform, link in councilor['social_media'].items() %}
+                                        <a href="{{ link }}" target="_blank">{{ platform|capitalize }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            {% set img_name = councilor['name'].split()[0]|lower %}
+                            {% if img_name in available_images %}
+                                <img class="rep-block-img" src="{{ url_for('static', filename='images/' + img_name + '.jpg') }}" alt="{{ councilor['name'] }}">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="officials-section">
+            <div class="rep-section-header">District School Committee Member</div>
+            <div class="representatives-grid">
+                <div class="rep-block rep-block-flex">
+                    <div class="rep-block-info">
+                        <span class="label">{{ district_data['school_committee']['name'] }}</span><br>
+                        District {{ info['District'] }} School Committee member<br>
+                        {{ district_data['school_committee']['phone'] }}<br>
+                        <a href="mailto:{{ district_data['school_committee']['email'] }}">{{ district_data['school_committee']['email'] }}</a><br>
+                        {{ district_data['school_committee']['address'] }}<br>
+                        {% if district_data['school_committee'].get('social_media') %}
+                            {% for platform, link in district_data['school_committee']['social_media'].items() %}
+                                <a href="{{ link }}" target="_blank">{{ platform|capitalize }}</a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% set img_name = district_data['school_committee']['name'].split()[0]|lower %}
+                    {% if img_name in available_images %}
+                        <img class="rep-block-img" src="{{ url_for('static', filename='images/' + img_name + '.jpg') }}" alt="{{ district_data['school_committee']['name'] }}">
+                    {% endif %}
+                </div>
+            </div>
+            {% if at_large_data and at_large_data.get('school_committee') %}
+                <div class="rep-section-header">At-Large School Committee Member{% if at_large_data['school_committee']|length > 1 %}s{% endif %}</div>
+                <div class="representatives-grid">
+                    {% for committee in at_large_data['school_committee'] %}
+                        <div class="rep-block rep-block-flex">
+                            <div class="rep-block-info">
+                                <span class="label">{{ committee['name'] }}</span><br>
+                                At-Large School Committee member<br>
+                                {{ committee['phone'] }}<br>
+                                <a href="mailto:{{ committee['email'] }}">{{ committee['email'] }}</a><br>
+                                {{ committee['address'] }}<br>
+                                {% if committee.get('social_media') %}
+                                    {% for platform, link in committee['social_media'].items() %}
+                                        <a href="{{ link }}" target="_blank">{{ platform|capitalize }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            {% set img_name = committee['name'].split()[0]|lower %}
+                            {% if img_name in available_images %}
+                                <img class="rep-block-img" src="{{ url_for('static', filename='images/' + img_name + '.jpg') }}" alt="{{ committee['name'] }}">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% elif info is not none %}
+        <div class="blue-box error-box">
+            <p><b>That address doesn't seem to be in our database. Try another address.</b></p>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
