@@ -12,6 +12,9 @@ primary_region = 'bos'
 [env]
   PORT = '8080'
 
+[processes]
+web = "gunicorn app:app --bind 0.0.0.0:$PORT"
+
 [http_service]
   internal_port = 8080
   force_https = true
