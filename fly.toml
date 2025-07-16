@@ -1,10 +1,9 @@
-# fly.toml app configuration file generated for chelsea on 2025-07-16T11:48:42-04:00
+# fly.toml app configuration file generated for chelsea-test on 2025-06-20T12:17:16-04:00
 #
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+# See https://fly.io/docs/reference/configuration/for information about how to use this file.
 #
 
-app_name = 'chelsea-test'
-app = 'chelsea'
+app = 'chelsea-test'
 primary_region = 'bos'
 
 [build]
