@@ -128,7 +128,7 @@ district_info = {
             }
         },
         'school_committee': {
-            'name': 'Lucía Henriquez',
+            'name': 'Lucia Henriquez',
             'phone': '617-792-9414',
             'email': 'henriquezl@chelseaschools.com',
             'address': '165 Winnisimmet Street',
