@@ -39,7 +39,6 @@ district_info = {
             'social_media': {
                 'facebook': 'http://facebook.com/sarahforchelsea',
                 'instagram': 'http://instagram.com/saraheliznev',
-                'twitter': 'http://twitter.com/saraheliznev',
                 'website': 'http://sarahforchelsea.com'
             }
         }
@@ -56,8 +55,8 @@ district_info = {
         },
         'school_committee': {
             'name': 'Jonathan Gomez-Pereira',
-            'phone': 'N/A',
-            'email': 'adsf@asdf.com',
+            'phone': '617-466-9540',
+            'email': 'gomezpereiraj-sc@chelseaschools.com',
             'address': '357 Crescent Avenue'
         }
     },
@@ -73,17 +72,17 @@ district_info = {
         },
         'school_committee': {
             'name': 'Mayra Balderas',
-            'phone': 'N/A',
-            'email': 'adsf@asdf.com',
+            'phone': '857-222-8244',
+            'email': 'balderasm@chelseaschools.com',
             'address': '59 Addison Street'
         }
     },
     5: {
         'city_councilor': {
             'name': 'Lisa Santagate',
-            'phone': 'N/A',
-            'email': 'xx@chelseama.gov',
-            'address': 'Xxx Ave',
+            'phone': '339-226-1320',
+            'email': 'lisasantagate@chelseama.gov',
+            'address': '221 Shurtleff Street',
             'social_media': {
                 'instagram': 'https://www.instagram.com/lisasantagate/'
             }
@@ -118,9 +117,9 @@ district_info = {
     7: {
         'city_councilor': {
             'name': 'Manuel Teshe',
-            'phone': 'N/A',
-            'email': 'xx@chelseama.gov',
-            'address': 'xx Street',
+            'phone': '617-858-9105',
+            'email': 'manuelteshe@chelseama.gov',
+            'address': '188 Broadway',
             'social_media': {
                 'facebook': 'https://www.facebook.com/profile.php?id=100093357881312',
                 'instagram': 'https://www.instagram.com/one_teshe/',
@@ -130,8 +129,8 @@ district_info = {
         },
         'school_committee': {
             'name': 'Lucía Henriquez',
-            'phone': 'N/A',
-            'email': 'x@g.com',
+            'phone': '617-792-9414',
+            'email': 'henriquezl@chelseaschools.com',
             'address': '165 Winnisimmet Street',
             'social_media': {
                 'instagram': 'https://www.instagram.com/luciahflores/'
@@ -169,7 +168,7 @@ district_info = {
             {
                 'name': 'Roberto Jimenez-Rivera',
                 'phone': '603-260-9448',
-                'email': 'XX@chelseama.gov',
+                'email': 'rjimenez@chelseama.gov',
                 'address': '40 Eleanor Street',
                 'social_media': {
                     'facebook': 'https://www.facebook.com/RobertoForChelsea',
@@ -196,7 +195,7 @@ district_info = {
             'address': '56 Cottage Street',
             'social_media': {
                 'instagram': 'https://www.instagram.com/katicabral_ma/',
-                'website': 'www.votekaticabral.com'
+                'website': 'https://votekaticabral.com'
             }
         }
     }
