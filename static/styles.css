@@ -223,6 +223,7 @@ h3 {
 
 .collapsible {
   cursor: pointer;
+font-weight: normal;
 }
 
 .content {
