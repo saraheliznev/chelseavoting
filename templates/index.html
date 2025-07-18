@@ -7,9 +7,8 @@
 <body>
 <div class="container">
     <h1 style="text-align:center;">Chelsea, MA: Who Are My Elected Officials?</h1>
-    <h2 style="text-align:center;font-weight:bold;">Enter your address:</h2>
 	<form method="post" class="address-form">
-        <label for="address" style="display:none;">Enter your address:</label>
+        <label for="address">Enter your address:</label>
         <input type="text" id="address" name="address" required>
         <button type="submit">Search</button>
     </form>
@@ -84,6 +83,7 @@
 						<p>Another important job they have is to advocate for the community. If a resident has a question or a problem related to the city, the resident's Councilor can bring it up to the City Manager, or give the resident advice.</p>
         				</div>
         </div>
+	
 
         <div class="officials-section">
             <div class="rep-section-header">District School Committee Member</div>
@@ -149,7 +149,9 @@
             <p><b>That address doesn't seem to be in our database. Try another address.</b></p>
         </div>
     {% endif %}
-    
+
+</div>
+<div class="container">
      <div class="officials-section">
      
      	<h2 style="font-weight: bold;">Questions and Answers about Chelsea Elected Officials and Elections</h2>
