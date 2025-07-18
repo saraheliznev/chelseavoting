@@ -21,11 +21,8 @@
     {% if info %}
         <div class="blue-box">
             <div class="info-grid">
-                <div class="info-label">Polling Location: {{ info['Polling Location'] }}</div>
-                <div class="info-label">District: {{ info['District'] }}</div>
-                <div class="info-label" style="weight:normal;">Ward: {{ info['Ward'] }}</div>
-                <div class="info-label" style="weight:normal;">Precinct: {{ info['Precinct'] }}</div>
-                
+                <div class="info-label">On Election Day, you vote at: {{ info['Polling Location'] }}.<br /><small>This is called your "polling location."</small></div>
+                <div class="info-label">You live in district {{ info['District'] }}.<br /><small>You also live in Ward {{ info['Ward'] }}, Precinct {{ info['Precinct'] }}.</small></div>              
             </div>
         </div>
         {% if district_data %}
